@@ -1,5 +1,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="preload" as="image" href="https://ik.imagekit.io/suelle/rich/medical_moz.png">
+<link rel="preload" as="image" href="https://ik.imagekit.io/suelle/rich/before&after_moz.png">
+<link rel="preload" as="image" href="https://ik.imagekit.io/suelle/rich/shortform_moz.png">
+
+
+
 <style>
   html,
   body {
@@ -3502,6 +3508,96 @@
     }
   }
 
+
+  /* ===== MOBILE ONLY FIX : thin top banner + seamless slow hero slider ===== */
+
+  .hero-proof-track {
+    display: flex !important;
+    width: max-content !important;
+    gap: 0 !important;
+    will-change: transform !important;
+    animation: heroProofSlide 56s linear infinite !important;
+  }
+
+  .hero-proof-set {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    gap: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .hero-proof-card img {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  @media screen and (max-width: 768px) {
+    .rm-top-banner-inner {
+      min-height: 52px !important;
+      padding: 8px 14px !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 8px !important;
+    }
+
+    .rm-top-brand {
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
+      font-size: 15px !important;
+      line-height: 1.05 !important;
+      letter-spacing: -0.45px !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+
+    .rm-top-brand span {
+      display: none !important;
+    }
+
+    .rm-top-cta {
+      flex: 0 0 auto !important;
+      width: auto !important;
+      min-height: 34px !important;
+      padding: 0 12px !important;
+      border-radius: 999px !important;
+      font-size: 12.5px !important;
+      letter-spacing: -0.45px !important;
+      white-space: nowrap !important;
+      box-shadow:
+        0 8px 22px rgba(216,174,82,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.45) !important;
+    }
+
+    .hero-proof-slider {
+      margin-top: 26px !important;
+      padding: 8px 0 !important;
+      overflow: hidden !important;
+    }
+
+    .hero-proof-track {
+      gap: 0 !important;
+      animation: heroProofSlide 46s linear infinite !important;
+    }
+
+    .hero-proof-set {
+      gap: 10px !important;
+      padding-right: 10px !important;
+    }
+
+    .hero-proof-card {
+      flex: 0 0 220px !important;
+      height: 138px !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-proof-track {
+      animation-duration: 80s !important;
+    }
+  }
+
 </style>
 
 <div class="lp-wrap">
@@ -3531,42 +3627,74 @@
         인플루언서?
       </h1>
 
-      <div class="hero-proof-slider">
-  <div class="hero-proof-track">
+      <div class="hero-proof-slider" aria-label="광고 소재 예시 자동 슬라이드">
+        <div class="hero-proof-track">
+          <div class="hero-proof-set">
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/medical_moz.png" alt="임상 데이터 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>임상 데이터</span>
+      </div>
 
-    <div class="hero-proof-card">
-      <img src="https://ik.imagekit.io/suelle/rich/medical_moz.png" alt="임상 데이터 예시">
-      <span>임상 데이터</span>
-    </div>
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/before&after_moz.png" alt="비포 애프터 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>비포·애프터</span>
+      </div>
 
-    <div class="hero-proof-card">
-      <img src="https://ik.imagekit.io/suelle/rich/before&after_moz.png" alt="비포 애프터 예시">
-      <span>비포·애프터</span>
-    </div>
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/shortform_moz.png" alt="인플루언서 숏폼 광고 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>인플루언서 숏폼</span>
+      </div>
 
-    <div class="hero-proof-card">
-      <img src="https://ik.imagekit.io/suelle/rich/shortform_moz.png" alt="인플루언서 숏폼 광고 예시">
-      <span>인플루언서 숏폼</span>
-    </div>
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/medical_moz.png" alt="임상 데이터 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>임상 데이터</span>
+      </div>
 
-    <!-- 자연스러운 무한 슬라이드를 위한 반복 영역 -->
-    <div class="hero-proof-card">
-      <img src="https://ik.imagekit.io/suelle/imsang.jpeg?updatedAt=1779623426980" alt="임상 데이터 예시">
-      <span>임상 데이터</span>
-    </div>
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/before&after_moz.png" alt="비포 애프터 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>비포·애프터</span>
+      </div>
 
-    <div class="hero-proof-card">
-      <img src="https://ik.imagekit.io/suelle/before.jpeg?updatedAt=1779623426868" alt="비포 애프터 예시">
-      <span>비포·애프터</span>
-    </div>
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/shortform_moz.png" alt="인플루언서 숏폼 광고 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>인플루언서 숏폼</span>
+      </div>
+          </div>
 
-    <div class="hero-proof-card">
-      <img src="https://ik.imagekit.io/suelle/inf.jpeg?updatedAt=1779623426865" alt="인플루언서 숏폼 광고 예시">
-      <span>인플루언서 숏폼</span>
-    </div>
+          <!-- 끊김 없는 무한 슬라이드를 위한 동일 복제 세트 -->
+          <div class="hero-proof-set" aria-hidden="true">
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/medical_moz.png" alt="임상 데이터 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>임상 데이터</span>
+      </div>
 
-  </div>
-</div>
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/before&after_moz.png" alt="비포 애프터 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>비포·애프터</span>
+      </div>
+
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/shortform_moz.png" alt="인플루언서 숏폼 광고 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>인플루언서 숏폼</span>
+      </div>
+
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/medical_moz.png" alt="임상 데이터 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>임상 데이터</span>
+      </div>
+
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/before&after_moz.png" alt="비포 애프터 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>비포·애프터</span>
+      </div>
+
+      <div class="hero-proof-card">
+        <img src="https://ik.imagekit.io/suelle/rich/shortform_moz.png" alt="인플루언서 숏폼 광고 예시" loading="eager" decoding="async" fetchpriority="high">
+        <span>인플루언서 숏폼</span>
+      </div>
+          </div>
+        </div>
+      </div>
 
       <p class="lp-impact-copy">
   점점 똑똑해지는 소비자들에게<br>
