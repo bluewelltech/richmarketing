@@ -1,3 +1,4 @@
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="preload" as="image" href="https://ik.imagekit.io/suelle/rich/medical_moz.png">
@@ -3635,7 +3636,7 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
     .hero-proof-track {
       gap: 10px !important;
       animation-name: heroProofLoopStableMobile !important;
-      animation-duration: 36s !important;
+      animation-duration: 44s !important;
       animation-timing-function: linear !important;
       animation-iteration-count: infinite !important;
     }
@@ -3664,6 +3665,24 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
         transform: translate3d(-690px, 0, 0);
       }
     }
+  }
+
+  /* ===== FINAL OVERRIDE : rainbow frame text ===== */
+
+  .frame-gradient {
+    display: inline-block;
+    font-weight: 950;
+    background: linear-gradient(
+      90deg,
+      #ff4d4d 0%,
+      #ff9f43 22%,
+      #f3d889 44%,
+      #72c7ff 70%,
+      #ffffff 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
   }
 
 </style>
@@ -3761,6 +3780,7 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
 
       <p class="lp-impact-copy">
   점점 똑똑해지는 소비자들에게<br>
+  누구나 쓰는 광고 소재는<br>
   더 이상 큰 효과가 없습니다.<br><br>
 
   <span class="rainbow-text">광고 영상, 상세페이지</span>에서 소비자에게<br>
@@ -3770,12 +3790,12 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
 
 
 <div class="cert-main">
-  <span class="cert-shine">“특허출원증명서”</span>
-  <span class="cert-sub">입니다.</span>
+ <span class="cert-shine">“26년 특허출원 기술”</span>
+  <span class="cert-sub">이라는 <span class="frame-gradient">프레임</span>입니다.</span>
 </div>
 
 <div class="consumer-reaction-image-wrap">
-  <img src="https://ik.imagekit.io/suelle/sobija.png" alt="소비자는 이렇게 반응합니다">
+  <img src="https://ik.imagekit.io/suelle/rich/sobija2.png" alt="소비자는 이렇게 반응합니다">
 </div>
 
       <div class="question-image-wrap">
@@ -4042,10 +4062,25 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
       <div class="lp-form-box">
       
         <a href="https://tally.so/r/ZjZ98a" target="_blank" class="lp-button">특허 마케팅 상담하기</a>
-.
         </div>
       </div>
     </div>
   </section>
 
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var tallyUrl = 'https://tally.so/r/ZjZ98a';
+
+    var leadButtons = document.querySelectorAll('a[href="' + tallyUrl + '"]');
+
+    leadButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead');
+        }
+      });
+    });
+  });
+</script>
