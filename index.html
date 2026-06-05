@@ -5975,5 +5975,43 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
         }
       });
     });
+
+    // 우클릭 방지
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // 이미지 드래그 방지
+    document.addEventListener('dragstart', function (e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // 텍스트 선택 방지
+    document.addEventListener('selectstart', function (e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // 복사 방지
+    document.addEventListener('copy', function (e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // 개발자도구/소스보기 단축키 일부 방지
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
+        (e.ctrlKey && e.key.toUpperCase() === 'U') ||
+        (e.ctrlKey && e.key.toUpperCase() === 'S') ||
+        (e.ctrlKey && e.key.toUpperCase() === 'C')
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
   });
 </script>
