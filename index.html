@@ -5591,6 +5591,52 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
     }
   }
 
+
+  /* ===== ADDON : dual-line CTA button (middle + bottom only) ===== */
+  .lp-button-double {
+    min-height: 92px !important;
+    padding: 12px 34px 10px !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+    line-height: 1 !important;
+  }
+
+  .lp-button-double .lp-button-main {
+    display: block;
+    font-size: 1.15em;
+    font-weight: 950;
+    letter-spacing: -0.65px;
+    line-height: 1.02;
+    transform: translateY(-2px);
+  }
+
+  .lp-button-double .lp-button-sub {
+    display: block;
+    font-size: 0.66em;
+    font-weight: 900;
+    letter-spacing: -0.3px;
+    line-height: 1.05;
+    transform: translateY(-1px);
+  }
+
+  @media screen and (max-width: 768px) {
+    .lp-button-double {
+      min-height: 82px !important;
+      padding: 10px 18px 9px !important;
+      gap: 2px !important;
+    }
+
+    .lp-button-double .lp-button-main {
+      font-size: 1.15em;
+      transform: translateY(-1px);
+    }
+
+    .lp-button-double .lp-button-sub {
+      font-size: 0.68em;
+      transform: translateY(-1px);
+    }
+  }
+
 </style>
 
 <div class="lp-wrap">
@@ -5704,7 +5750,7 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
         <img src="https://ik.imagekit.io/suelle/ChatGPT%20Image%202026%E1%84%82%E1%85%A7%E1%86%AB%205%E1%84%8B%E1%85%AF%E1%86%AF%2024%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010_30_39.png" alt="우리도 특허 낼 수 있을까요 이미지">
       </div>
 <div class="lp-cta-row">
-        <a href="https://tally.so/r/ZjZ98a" target="_blank" class="lp-button">특허 마케팅 신청하기</a>
+        <a href="https://tally.so/r/ZjZ98a" target="_blank" class="lp-button lp-button-double"><span class="lp-button-main">특허 마케팅 신청하기</span><span class="lp-button-sub">[ 내 제품 특허받기 ]</span></a>
       </div>
       <p class="rm-consult-note">평일·주말 접수 가능</p>
     </div>
@@ -5984,7 +6030,7 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
       </p>
 
       <div class="lp-form-box">
-        <a href="https://tally.so/r/ZjZ98a" target="_blank" class="lp-button">특허 마케팅 신청하기</a>
+        <a href="https://tally.so/r/ZjZ98a" target="_blank" class="lp-button lp-button-double"><span class="lp-button-main">특허 마케팅 신청하기</span><span class="lp-button-sub">[ 내 제품 특허받기 ]</span></a>
         <p class="rm-consult-note">평일·주말 접수 가능</p>
       </div>
     </div>
