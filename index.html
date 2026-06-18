@@ -5788,6 +5788,41 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
   }
 
 
+
+  /* ===== ADDON : IMAGE CLICK / DRAG / RIGHT-CLICK PROTECTION ===== */
+  html,
+  body,
+  .lp-wrap {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+
+  img,
+  .hero-proof-slider,
+  .hero-proof-card,
+  .rm-frame-slider,
+  .rm-frame-card,
+  .consumer-reaction-image-wrap,
+  .question-image-wrap,
+  .cert-paper-image-wrap,
+  .proof-media-card,
+  .ctr-proof-image-wrap {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
+    user-drag: none !important;
+    -webkit-touch-callout: none !important;
+  }
+
+  img {
+    pointer-events: none !important;
+  }
+
 </style>
 
 <div class="lp-wrap">
@@ -6254,6 +6289,34 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
     });
 
 
+
+
+
+    // 이미지 클릭/다운로드/드래그/롱프레스 메뉴 방지
+    document.querySelectorAll('img').forEach(function (img) {
+      img.setAttribute('draggable', 'false');
+      img.setAttribute('oncontextmenu', 'return false;');
+      img.setAttribute('ondragstart', 'return false;');
+      img.setAttribute('onselectstart', 'return false;');
+    });
+
+    function blockImageInteraction(e) {
+      if (!e.target || !e.target.closest) return;
+
+      var protectedArea = e.target.closest(
+        '.hero-proof-slider, .rm-frame-slider, .consumer-reaction-image-wrap, .question-image-wrap, .cert-paper-image-wrap, .proof-media-card, .ctr-proof-image-wrap, img'
+      );
+
+      if (protectedArea) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }
+
+    ['click', 'dblclick', 'auxclick', 'dragstart', 'contextmenu'].forEach(function (eventName) {
+      document.addEventListener(eventName, blockImageInteraction, true);
+    });
 
     // 추가 이미지 슬라이더: 가장 짧은 이미지 높이에 맞춰 세로 길이 통일
     function syncFrameSliderHeight() {
