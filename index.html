@@ -5637,6 +5637,157 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
     }
   }
 
+
+  /* ===== ADDON : FRAME IMAGE AUTO SLIDER (blank URL ready) ===== */
+  .rm-frame-slider {
+    width: 100%;
+    max-width: 980px;
+    margin: 32px auto 0;
+    padding: 12px 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    transform: translateZ(0);
+  }
+
+  .rm-frame-slider::before,
+  .rm-frame-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 86px;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .rm-frame-slider::before {
+    left: 0;
+    background: linear-gradient(90deg, #050505 0%, rgba(5,5,5,0) 100%);
+  }
+
+  .rm-frame-slider::after {
+    right: 0;
+    background: linear-gradient(270deg, #050505 0%, rgba(5,5,5,0) 100%);
+  }
+
+  .rm-frame-track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    will-change: transform;
+    animation: rmFrameSlideLoop 38s linear infinite;
+  }
+
+  .rm-frame-group {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    padding-right: 16px;
+  }
+
+  .rm-frame-card {
+    flex: 0 0 clamp(240px, 44vw, 460px);
+    width: clamp(240px, 44vw, 460px);
+    min-width: 0;
+    height: var(--rm-frame-card-height, auto);
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    background:
+      radial-gradient(circle at 22% 0%, rgba(243,216,137,0.16), transparent 36%),
+      linear-gradient(180deg, rgba(255,255,255,0.085), rgba(255,255,255,0.028)),
+      rgba(0,0,0,0.32);
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow:
+      0 22px 58px rgba(0,0,0,0.36),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  .rm-frame-card img {
+    display: block;
+    width: 100%;
+    height: var(--rm-frame-img-height, auto);
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 24px;
+  }
+
+  .rm-frame-card img:not([src]),
+  .rm-frame-card img[src=""] {
+    display: none;
+  }
+
+  .rm-frame-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 10;
+    min-height: 220px;
+    padding: 24px;
+    color: rgba(255,255,255,0.56);
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.45;
+    letter-spacing: -0.4px;
+    font-weight: 800;
+  }
+
+  .rm-frame-card img[src]:not([src=""]) + .rm-frame-empty {
+    display: none;
+  }
+
+  @keyframes rmFrameSlideLoop {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .rm-frame-slider {
+      max-width: 100%;
+      margin-top: 26px;
+      padding: 9px 0;
+      border-radius: 22px;
+    }
+
+    .rm-frame-slider::before,
+    .rm-frame-slider::after {
+      width: 38px;
+    }
+
+    .rm-frame-track {
+      animation-duration: 34s;
+    }
+
+    .rm-frame-group {
+      gap: 10px;
+      padding-right: 10px;
+    }
+
+    .rm-frame-card {
+      flex-basis: clamp(165px, 46vw, 230px);
+      width: clamp(165px, 46vw, 230px);
+      border-radius: 18px;
+    }
+
+    .rm-frame-card img {
+      border-radius: 17px;
+    }
+
+    .rm-frame-empty {
+      min-height: 118px;
+      padding: 16px 12px;
+      font-size: 12px;
+      line-height: 1.35;
+      letter-spacing: -0.35px;
+    }
+  }
+
+
 </style>
 
 <div class="lp-wrap">
@@ -5740,6 +5891,56 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
 <div class="cert-main">
  <span class="cert-shine">“26년 특허출원 기술”</span>
   <span class="cert-sub">이라는 <span class="frame-gradient">프레임</span>입니다.</span>
+</div>
+
+<div class="rm-frame-slider" aria-label="추가 이미지 자동 슬라이드">
+  <div class="rm-frame-track">
+    <div class="rm-frame-group">
+      <div class="rm-frame-card">
+        <img class="rm-frame-img" src="https://ik.imagekit.io/suelle/rich/1.jpg" alt="추가 이미지 1" loading="lazy" decoding="async">
+        <span class="rm-frame-empty">이미지 URL 입력 영역</span>
+      </div>
+      <div class="rm-frame-card">
+        <img class="rm-frame-img" src="https://ik.imagekit.io/suelle/rich/2.jpg" alt="추가 이미지 2" loading="lazy" decoding="async">
+        <span class="rm-frame-empty">이미지 URL 입력 영역</span>
+      </div>
+      <div class="rm-frame-card">
+        <img class="rm-frame-img" src="https://ik.imagekit.io/suelle/rich/3.jpg" alt="추가 이미지 3" loading="lazy" decoding="async">
+        <span class="rm-frame-empty">이미지 URL 입력 영역</span>
+      </div>
+      <div class="rm-frame-card">
+        <img class="rm-frame-img" src="https://ik.imagekit.io/suelle/rich/4.jpg" alt="추가 이미지 4" loading="lazy" decoding="async">
+        <span class="rm-frame-empty">이미지 URL 입력 영역</span>
+      </div>
+      <div class="rm-frame-card">
+        <img class="rm-frame-img" src="https://ik.imagekit.io/suelle/rich/5.jpg" alt="추가 이미지 5" loading="lazy" decoding="async">
+        <span class="rm-frame-empty">이미지 URL 입력 영역</span>
+      </div>
+    </div>
+
+    <div class="rm-frame-group" aria-hidden="true">
+      <div class="rm-frame-card">
+        <img class="rm-frame-img" src="https://ik.imagekit.io/suelle/rich/1.jpg" alt="" loading="lazy" decoding="async">
+        <span class="rm-frame-empty">이미지 URL 입력 영역</span>
+      </div>
+      <div class="rm-frame-card">
+        <img class="rm-frame-img" src="https://ik.imagekit.io/suelle/rich/2.jpg" alt="" loading="lazy" decoding="async">
+        <span class="rm-frame-empty">이미지 URL 입력 영역</span>
+      </div>
+      <div class="rm-frame-card">
+        <img class="rm-frame-img" src="https://ik.imagekit.io/suelle/rich/3.jpg" alt="" loading="lazy" decoding="async">
+        <span class="rm-frame-empty">이미지 URL 입력 영역</span>
+      </div>
+      <div class="rm-frame-card">
+        <img class="rm-frame-img" src="https://ik.imagekit.io/suelle/rich/4.jpg" alt="" loading="lazy" decoding="async">
+        <span class="rm-frame-empty">이미지 URL 입력 영역</span>
+      </div>
+      <div class="rm-frame-card">
+        <img class="rm-frame-img" src="https://ik.imagekit.io/suelle/rich/5.jpg" alt="" loading="lazy" decoding="async">
+        <span class="rm-frame-empty">이미지 URL 입력 영역</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="consumer-reaction-image-wrap">
@@ -6051,6 +6252,58 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
         }
       });
     });
+
+
+
+    // 추가 이미지 슬라이더: 가장 짧은 이미지 높이에 맞춰 세로 길이 통일
+    function syncFrameSliderHeight() {
+      var sliders = document.querySelectorAll('.rm-frame-slider');
+
+      sliders.forEach(function (slider) {
+        var imgs = slider.querySelectorAll('.rm-frame-group:not([aria-hidden="true"]) .rm-frame-card img[src]:not([src=""])');
+
+        slider.style.removeProperty('--rm-frame-card-height');
+        slider.style.removeProperty('--rm-frame-img-height');
+
+        window.requestAnimationFrame(function () {
+          window.requestAnimationFrame(function () {
+            var minHeight = Infinity;
+
+            imgs.forEach(function (img) {
+              if (!img.complete || !img.naturalWidth) return;
+
+              var height = img.getBoundingClientRect().height;
+              if (height > 0) {
+                minHeight = Math.min(minHeight, height);
+              }
+            });
+
+            if (minHeight !== Infinity) {
+              slider.style.setProperty('--rm-frame-card-height', Math.round(minHeight) + 'px');
+              slider.style.setProperty('--rm-frame-img-height', '100%');
+            }
+          });
+        });
+      });
+    }
+
+    var frameHeightSyncTimer;
+    function scheduleFrameSliderHeightSync() {
+      window.clearTimeout(frameHeightSyncTimer);
+      frameHeightSyncTimer = window.setTimeout(syncFrameSliderHeight, 80);
+    }
+
+    document.querySelectorAll('.rm-frame-slider img').forEach(function (img) {
+      if (!img.complete) {
+        img.addEventListener('load', scheduleFrameSliderHeightSync);
+      }
+    });
+
+    window.addEventListener('load', scheduleFrameSliderHeightSync);
+    window.addEventListener('resize', scheduleFrameSliderHeightSync);
+    scheduleFrameSliderHeightSync();
+    window.setTimeout(scheduleFrameSliderHeightSync, 700);
+    window.setTimeout(scheduleFrameSliderHeightSync, 1600);
 
     // 우클릭 방지
     document.addEventListener('contextmenu', function (e) {
