@@ -6725,7 +6725,7 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
 
 .qx-process {
   display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1.35fr;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
   align-items: stretch;
   gap: 9px;
   margin: 0 auto 14px;
@@ -6843,7 +6843,7 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
   }
 
   .qx-process {
-    grid-template-columns: 1fr 16px 1fr 16px 1.25fr;
+    grid-template-columns: 1fr 16px 1fr 16px 1fr;
     gap: 4px;
     margin-bottom: 10px;
   }
@@ -7312,18 +7312,19 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
 /* PRICE : small luxury divider above headline */
 .pricing-head {
   position: relative;
-  padding-top: 32px;
+  padding-top: 24px;
 }
 
 .pricing-head::before {
-  content: "✦";
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  color: #f3d889;
-  font-size: 18px;
-  text-shadow: -54px 0 0 rgba(243,216,137,.35), 54px 0 0 rgba(243,216,137,.35), 0 0 16px rgba(243,216,137,.28);
+  width: 72px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(243,216,137,.46);
 }
 
 .pricing-card {
@@ -7341,9 +7342,7 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
 
 .pricing-card-main {
   background:
-    radial-gradient(circle at 85% 0%, rgba(243,216,137,.20), transparent 30%),
-    radial-gradient(circle at 20% 0%, rgba(243,216,137,.13), transparent 36%),
-    linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.045)) !important;
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.045)) !important;
 }
 
 /* TRUST : ornamental frame corners + laurel feel */
@@ -7542,12 +7541,12 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
   }
 
   .pricing-head {
-    padding-top: 26px;
+    padding-top: 20px;
   }
 
   .pricing-head::before {
-    font-size: 15px;
-    text-shadow: -42px 0 0 rgba(243,216,137,.28), 42px 0 0 rgba(243,216,137,.28), 0 0 12px rgba(243,216,137,.22);
+    width: 56px;
+    height: 2px;
   }
 
   .trust-banner-box-v2::before,
@@ -7598,6 +7597,334 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
   }
 }
 
+
+/* ===== REVISION V11 : NORMAL PRICING DESIGN ===== */
+.pricing-section:before {
+  background: rgba(255,255,255,0.022) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  box-shadow: none !important;
+}
+
+.rm-pricing-v8 .pricing-card,
+.pricing-card {
+  background: #171e2b !important;
+  border: 1px solid rgba(255,255,255,0.13) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22) !important;
+}
+
+.rm-pricing-v8 .pricing-card-main,
+.pricing-card-main {
+  background: #1a202b !important;
+  border-color: rgba(232,194,95,0.32) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22) !important;
+}
+
+.pricing-card::before {
+  display: none !important;
+  content: none !important;
+}
+
+.pricing-price,
+.rm-pricing-v8 .pricing-price,
+.rm-pricing-v8 .pricing-price-package .price-main {
+  text-shadow: none !important;
+}
+
+.pricing-label,
+.pricing-card-main .pricing-label {
+  box-shadow: none !important;
+}
+
+.price-per-day {
+  background: rgba(255,255,255,0.045) !important;
+  border-color: rgba(255,255,255,0.16) !important;
+  box-shadow: none !important;
+}
+
+.pricing-invest-panel {
+  background: #171e2b !important;
+  border-color: rgba(255,255,255,0.12) !important;
+  box-shadow: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .pricing-section:before {
+    background: rgba(255,255,255,0.018) !important;
+  }
+}
+
+
+/* ===== REVISION V12 : CLEAN HERO / TRUST ORNAMENTS ===== */
+.cert-main {
+  padding-top: 0 !important;
+}
+
+.cert-main::before,
+.cert-main::after,
+.cert-main .cert-shine::after {
+  display: none !important;
+  content: none !important;
+}
+
+.trust-banner-box-v2::before,
+.trust-banner-box-v2::after,
+.trust-divider::after {
+  display: none !important;
+  content: none !important;
+}
+
+.trust-banner-box-v2 {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .cert-main {
+    padding-top: 0 !important;
+  }
+
+  .trust-banner-box-v2 {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+}
+
+
+/* ===== REVISION V13 : COPY / COMPACT / ALIGNMENT ===== */
+
+/* HERO 상단 '요즘 대부분 브랜드들을 보면' : 텍스트만 보이도록 정리 */
+.hero-kicker-v1 {
+  display: block !important;
+  margin: 0 auto 18px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  color: rgba(255,255,255,0.74) !important;
+  font-size: clamp(16px, 2vw, 19px) !important;
+  line-height: 1.45 !important;
+  letter-spacing: -0.4px !important;
+  font-weight: 820 !important;
+}
+
+/* 브랜드 포지셔닝 섹션 전체적으로 조금 더 컴팩트 */
+.brand-position-frame {
+  margin: 34px auto 24px !important;
+  padding: 28px 22px 24px !important;
+}
+
+.brand-position-kicker {
+  margin-bottom: 8px !important;
+  font-size: 13px !important;
+}
+
+.brand-position-title {
+  margin-bottom: 18px !important;
+  font-size: clamp(24px, 3.6vw, 38px) !important;
+  line-height: 1.26 !important;
+  letter-spacing: -1.05px !important;
+}
+
+.brand-position-flow {
+  gap: 12px !important;
+}
+
+.brand-position-card {
+  padding: 20px 16px !important;
+  border-radius: 20px !important;
+}
+
+.brand-position-label {
+  margin-bottom: 12px !important;
+}
+
+.brand-position-before {
+  font-size: 15px !important;
+  line-height: 1.52 !important;
+}
+
+.brand-position-after {
+  margin-top: 7px !important;
+  font-size: 18.5px !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.55px !important;
+}
+
+.brand-position-note {
+  margin-top: 7px !important;
+  font-size: 13px !important;
+  line-height: 1.44 !important;
+}
+
+.brand-position-final {
+  margin-top: 14px !important;
+  padding: 16px 14px !important;
+  border-radius: 18px !important;
+  font-size: clamp(16.5px, 2.4vw, 22px) !important;
+  line-height: 1.48 !important;
+  letter-spacing: -0.45px !important;
+  font-weight: 820 !important;
+}
+
+.brand-position-emph,
+.brand-position-key {
+  color: #f3d889 !important;
+  font-weight: 950 !important;
+}
+
+.brand-position-final strong {
+  color: inherit !important;
+}
+
+.brand-position-after-brand {
+  letter-spacing: -0.8px !important;
+}
+
+/* 1~3 박스와 숫자 정렬 보정 */
+.qx-process-item {
+  display: grid !important;
+  grid-template-rows: auto minmax(2.7em, auto) !important;
+  align-content: center !important;
+  justify-items: center !important;
+  row-gap: 8px !important;
+}
+
+.qx-process-num {
+  margin: 0 !important;
+}
+
+.qx-process-item b {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 2.7em !important;
+  text-align: center !important;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-kicker-v1 {
+    margin-bottom: 14px !important;
+    font-size: 14.5px !important;
+    line-height: 1.4 !important;
+  }
+
+  .brand-position-frame {
+    margin: 28px auto 22px !important;
+    padding: 22px 12px 18px !important;
+    border-radius: 22px !important;
+  }
+
+  .brand-position-kicker {
+    margin-bottom: 7px !important;
+    font-size: 11.5px !important;
+  }
+
+  .brand-position-title {
+    margin-bottom: 14px !important;
+    font-size: 21px !important;
+    line-height: 1.28 !important;
+    letter-spacing: -0.8px !important;
+  }
+
+  .brand-position-flow {
+    gap: 8px !important;
+  }
+
+  .brand-position-card {
+    padding: 16px 12px !important;
+    border-radius: 17px !important;
+  }
+
+  .brand-position-label {
+    margin-bottom: 9px !important;
+    font-size: 10px !important;
+  }
+
+  .brand-position-before {
+    font-size: 12.8px !important;
+    line-height: 1.48 !important;
+  }
+
+  .brand-position-after {
+    margin-top: 6px !important;
+    font-size: 15.2px !important;
+    line-height: 1.38 !important;
+    letter-spacing: -0.45px !important;
+  }
+
+  .brand-position-after-brand {
+    font-size: 12.1px !important;
+    letter-spacing: -0.45px !important;
+    white-space: nowrap !important;
+  }
+
+  .brand-position-note {
+    margin-top: 6px !important;
+    font-size: 11.2px !important;
+    line-height: 1.4 !important;
+  }
+
+  .brand-position-final {
+    margin-top: 11px !important;
+    padding: 13px 10px !important;
+    border-radius: 14px !important;
+    font-size: 14.6px !important;
+    line-height: 1.46 !important;
+    letter-spacing: -0.36px !important;
+  }
+
+  .qx-process-item {
+    grid-template-rows: auto minmax(2.9em, auto) !important;
+    row-gap: 6px !important;
+  }
+
+  .qx-process-item b {
+    min-height: 2.9em !important;
+  }
+}
+
+
+/* ===== REVISION V14 : MOBILE LINE BREAK / ALIGN FIX ===== */
+
+/* 섹션 상단 별 제거 */
+.proof-main-copy::before,
+.rm-available-v10 .lp-heading::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* 브랜드 인식 문구 크기 정렬 */
+.brand-position-after-brand {
+  font-size: 18.5px !important;
+  line-height: 1.4 !important;
+}
+
+@media screen and (max-width: 768px) {
+  /* CRX 카드 줄바꿈 반영 */
+  .crx-sub br,
+  .crx-main br {
+    display: block !important;
+  }
+
+  /* 브랜드 인식 문구를 제품 인식 문구와 같은 톤으로 정렬 */
+  .brand-position-after,
+  .brand-position-after-brand {
+    font-size: 13.8px !important;
+    line-height: 1.4 !important;
+    letter-spacing: -0.55px !important;
+  }
+
+  .brand-position-after-brand {
+    white-space: nowrap !important;
+  }
+
+  /* 질문 섹션 설명 줄바꿈 유지 */
+  .qx-frame-v2 .qx-sub br {
+    display: block !important;
+  }
+}
+
 </style>
 
 </head>
@@ -7620,15 +7947,15 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
   <!-- HERO -->
   <section class="lp-hero">
     <div class="lp-section lp-center">
-      <p class="hero-kicker-v1">요즘 잘 팔리는 브랜드들은</p>
+      <p class="hero-kicker-v1">요즘 대부분 브랜드들을 보면</p>
 
       <h1 class="lp-title hero-title-v1">
-        임상 데이터?<br>
-        비포·애프터?<br>
-        인플루언서?
+        임상 데이터<br>
+        비포·애프터<br>
+        인플루언서
       </h1>
 
-      <p class="hero-all-v1">모두 다 하고 있습니다.</p>
+      <p class="hero-all-v1">이제는 모두 비슷하게 하고 있습니다.</p>
 
       <div class="hero-proof-slider" aria-label="광고 소재 예시 자동 슬라이드">
         <div class="hero-proof-track">
@@ -7695,23 +8022,29 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
       </div>
 
       <div class="hero-message-v1">
-        <p class="hero-problem">문제는 이제 <strong>다 비슷하다는 겁니다.</strong></p>
-        <p class="hero-need">소비자가 한 번 더 멈춰보게 만드는<br><strong>새로운 <em>‘소재’</em>가 필요합니다.</strong></p>
+        <p class="hero-problem">
+          문제는, 소비자 눈에도<br>
+          <strong>모든 제품이 다 비슷해 보인다는 겁니다.</strong>
+        </p>
+        <p class="hero-need">
+          비슷한 광고, 비슷한 효능, 비슷한 데이터 속에서<br>
+          소비자가 한 번 더 멈춰보고,<br>
+          제품을 한 번 더 들여다보게 만드는<br>
+          <strong>새로운 차별점이 필요합니다.</strong>
+        </p>
       </div>
 
       <p class="lp-impact-copy">
-        점점 똑똑해지는 소비자들에게<br>
-        누구나 쓰는 광고 소재는<br>
-        더 이상 큰 효과가 없습니다.<br><br>
-
-        <span class="rainbow-text">광고 영상, 상세페이지</span>에서 소비자에게<br>
-        <span class="impact-white">확실히 어필되는 포인트,</span><br>
-        <span class="rainbow-text">뇌리에 박히는 차별성</span>은
+        <span class="rainbow-text">광고 영상과 상세페이지</span>에서<br>
+        <span class="impact-white">“이 제품은 뭔가 다른가?”</span><br>
+        라는 호기심을 만들고<br>
+        제품에 대한 기대감을 주는<br>
+        <span class="rainbow-text">새로운 소구 소재.</span>
       </p>
 
 
 <div class="cert-main">
- <span class="cert-shine">“26년 특허출원 기술”</span>
+  <span class="cert-shine">브랜드 특허출원 기술</span>
   <span class="cert-sub">이라는 <span class="frame-gradient">프레임</span>입니다.</span>
 </div>
 
@@ -7782,7 +8115,7 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
         <svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.6 1 2.5h6c0-.9.3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
       </div>
       <div class="crx-main">“독자적인 <span class="crx-g">특허출원 기술</span>이라고?”</div>
-       <div class="crx-sub">“정말 기술력과 효능을 갖춘 제품인가 보네.”</div>
+       <div class="crx-sub">“정말 기술력과 효능을 갖춘<br>제품인가 보네”</div>
       <div class="crx-dots">•••</div>
     </div>
 
@@ -7811,7 +8144,7 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
       <div class="crx-icon">
         <svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.6"/><circle cx="17.5" cy="20" r="1.6"/><path d="M3 3h2.5l2.3 12.5a1.6 1.6 0 0 0 1.6 1.3h7.7a1.6 1.6 0 0 0 1.6-1.3L20.5 7H6"/></svg>
       </div>
-      <div class="crx-main">“단순히 <span class="crx-g">과대광고</span>만 하는 제품은 아닌 것 같은데?”</div>
+      <div class="crx-main">“단순히 <span class="crx-g">과대광고</span>만 하는<br>제품은 아닌 것 같은데”</div>
        <div class="crx-sub">“제품 자체에 근거가 있으니 좀 더 믿음이 간다.”</div>
        <div class="crx-dots">•••</div>
     </div>
@@ -7824,31 +8157,33 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
 
 
       <div class="brand-position-frame" aria-label="특허출원을 통한 브랜드 포지셔닝">
-        <p class="brand-position-kicker">특허출원이 만드는 차이</p>
+        <p class="brand-position-kicker">특허출원이 만드는 가장 큰 차이</p>
 
         <h2 class="brand-position-title">
-          소비자가 보는 건<br><span>‘특허’ 그 자체가 아닙니다.</span>
+          같은 제품이라도,<br><span>소비자가 받아들이는 인식이 달라집니다.</span>
         </h2>
 
         <div class="brand-position-flow">
           <div class="brand-position-card">
             <div class="brand-position-label">제품 인식</div>
-            <p class="brand-position-before">“성분을 그냥 섞어 만든 제품”이 아니라</p>
-            <p class="brand-position-after">“효능과 작용원리를 연구해 설계한 기술제품”</p>
-            <p class="brand-position-note">으로 보이게 됩니다.</p>
+            <p class="brand-position-before">“성분을 조합해 만든 일반적인 제품”이 아니라</p>
+            <p class="brand-position-after">“효능과 작용원리까지 연구해<br>설계한 <span class="brand-position-emph">기술제품</span>”</p>
+            <p class="brand-position-note">으로 인식되도록 만듭니다.</p>
           </div>
 
           <div class="brand-position-card">
             <div class="brand-position-label">브랜드 인식</div>
-            <p class="brand-position-before">“제품을 판매하는 회사”에서</p>
-            <p class="brand-position-after">“자체 기술과 연구개발 역량을 가진 브랜드”</p>
-            <p class="brand-position-note">로 인식됩니다.</p>
+            <p class="brand-position-before">단순히 제품을 광고/판매하는 브랜드가 아니라</p>
+            <p class="brand-position-after brand-position-after-brand">“해당 분야의 효능을 집중적으로 연구하는 <span class="brand-position-emph">전문 브랜드</span>”</p>
+            <p class="brand-position-note">로 인식되도록 만듭니다.</p>
           </div>
         </div>
 
         <div class="brand-position-final">
-          결국 가격이나 함량이 아니라,<br>
-          <strong>‘기술력’으로 비교되는 브랜드를 만듭니다.</strong>
+          그리고 그 인식의 차이는<br>
+          <span class="brand-position-key">“제품에 대한 호기심”</span>과 <span class="brand-position-key">“효능에 대한 기대감”</span>을 높여,<br>
+          첫 구매 전환을 만들고<br>
+          <span class="brand-position-key">기존 타제품 사용자의 전환</span>까지 유도합니다.
         </div>
       </div>
 
@@ -7857,7 +8192,7 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
           <div class="qx-title">“우리도 특허 낼 수 있을까요?”</div>
           <div class="qx-lead">제품명이나 판매 링크만 보내주세요.</div>
           <div class="qx-sub">
-            제품을 분석해 <span class="qx-g">어떤 마케팅 포인트를 강조할지</span>부터<br>
+            제품을 분석해 <span class="qx-g">어떤 포인트를 강조할지부터</span><br>
             <span class="qx-g">어떤 특허를 출원하면 좋을지</span>까지 설계해드립니다.
           </div>
         </div>
@@ -7930,23 +8265,15 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
     </div>
 
     <div class="pricing-invest-copy pricing-invest-copy-v2">
-      <p class="pricing-invest-lead">
-        기존 광고비에 하루 약 <span class="ic-red">“400원”</span>만 더 투자하세요.
-      </p>
-
       <div class="pricing-invest-panel">
         <p class="pricing-invest-title">광고 한 번에 쓰고 사라지는 소재가 아닙니다.</p>
         <p class="pricing-invest-body">
           한 번 설계한 특허출원 기술은<br>
-          최대 3년 동안 <span class="ic-gold">상세페이지·광고·SNS·영업자료·브랜드 소개자료</span> 등<br>
+          최소 3년 동안 <span class="ic-gold">상세페이지·광고·SNS·영업자료·브랜드 소개자료</span> 등<br>
           다양한 마케팅 채널에서 반복적으로 활용할 수 있습니다.
         </p>
       </div>
 
-      <p class="pricing-invest-final">
-        “3년 동안, 우리 제품을 <span class="ic-gold">‘쉽게 대체하기 어려운 기술제품’</span>으로<br>
-        보여줄 하나의 근거가 됩니다”
-      </p>
     </div>
 
     <p class="pricing-note">
@@ -7958,20 +8285,6 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
   <!-- TRUST BANNER -->
   <section class="lp-section trust-banner-section trust-banner-v2">
     <div class="trust-banner-box trust-banner-box-v2">
-      <div class="trust-copy-block">
-        <p class="trust-pretitle">
-          특허를 아는 것만으로는 부족합니다.<br>
-          <strong>‘팔리는 제품’을 알아야 합니다.</strong>
-        </p>
-
-        <p class="trust-explain">
-          제품의 기술을 특허로 만드는 것과,<br>
-          그 기술을 <strong>소비자가 사고 싶게 보이도록 설계하는 것은 다른 일입니다.</strong>
-        </p>
-      </div>
-
-      <div class="trust-divider"></div>
-
       <p class="trust-line-1">
         코스메틱·건기식 브랜드를 다수 운영하며,<br>
         여러 브랜드를 성장시켜온
