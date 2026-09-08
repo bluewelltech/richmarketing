@@ -8009,89 +8009,157 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
 /* ===== FOOTER : ROMUN PATENT LAW OFFICE ===== */
 .romun-footer {
   width: 100%;
-  background: #050913;
-  border-top: 1px solid rgba(255,255,255,0.09);
+  background: #1c2c5f;
+  border-top: 1px solid rgba(255,255,255,0.10);
 }
 
 .romun-footer-inner {
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 54px 22px 46px;
+  padding: 50px 22px 42px;
 }
 
-.romun-footer-brand {
+.romun-footer-logo {
+  display: block;
+  width: min(420px, 100%);
+  height: auto;
+  margin: 0 0 26px;
+}
+
+.romun-footer-representative {
   margin: 0;
+  color: rgba(255,255,255,0.94);
+  font-size: 15px;
+  line-height: 1.55;
+  letter-spacing: -0.4px;
+  font-weight: 700;
+}
+
+.romun-footer-representative strong {
   color: #ffffff;
-  font-size: 24px;
-  line-height: 1.3;
-  letter-spacing: -0.8px;
-  font-weight: 950;
+  font-weight: 900;
 }
 
 .romun-footer-line {
   width: 100%;
-  max-width: 500px;
   height: 1px;
-  margin: 22px 0 28px;
-  background: rgba(255,255,255,0.42);
+  margin: 24px 0 28px;
+  background: rgba(255,255,255,0.24);
 }
 
-.romun-footer-info {
+.romun-footer-offices {
   display: grid;
-  gap: 9px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 38px;
 }
 
-.romun-footer-info p {
+.romun-footer-office {
+  min-width: 0;
+}
+
+.romun-footer-office + .romun-footer-office {
+  padding-left: 38px;
+  border-left: 1px solid rgba(255,255,255,0.16);
+}
+
+.romun-footer-office h3 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.45px;
+  font-weight: 900;
+}
+
+.romun-footer-office p,
+.romun-footer-email {
   margin: 0;
-  color: rgba(255,255,255,0.70);
-  font-size: 14px;
-  line-height: 1.65;
-  letter-spacing: -0.35px;
+  color: rgba(255,255,255,0.72);
+  font-size: 13.5px;
+  line-height: 1.7;
+  letter-spacing: -0.3px;
   font-weight: 600;
+  word-break: keep-all;
 }
 
-.romun-footer-info strong {
+.romun-footer-office p + p {
+  margin-top: 3px;
+}
+
+.romun-footer-office strong,
+.romun-footer-email strong {
   color: rgba(255,255,255,0.92);
   font-weight: 800;
 }
 
+.romun-footer-email {
+  margin-top: 24px;
+}
+
 .romun-footer-copy {
-  margin: 34px 0 0;
-  color: rgba(255,255,255,0.42);
-  font-size: 13px;
+  margin: 30px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.44);
+  font-size: 12.5px;
   line-height: 1.5;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.15px;
   font-weight: 600;
 }
 
 @media screen and (max-width: 768px) {
   .romun-footer-inner {
-    padding: 42px 20px 36px;
+    padding: 38px 20px 34px;
   }
 
-  .romun-footer-brand {
-    font-size: 21px;
+  .romun-footer-logo {
+    width: min(300px, 92%);
+    margin-bottom: 22px;
+  }
+
+  .romun-footer-representative {
+    font-size: 13.5px;
   }
 
   .romun-footer-line {
-    margin: 18px 0 22px;
+    margin: 20px 0 22px;
   }
 
-  .romun-footer-info {
-    gap: 7px;
+  .romun-footer-offices {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
-  .romun-footer-info p {
-    font-size: 12.5px;
-    line-height: 1.6;
+  .romun-footer-office + .romun-footer-office {
+    padding-left: 0;
+    padding-top: 22px;
+    border-left: 0;
+    border-top: 1px solid rgba(255,255,255,0.14);
+  }
+
+  .romun-footer-office h3 {
+    margin-bottom: 9px;
+    font-size: 14.5px;
+  }
+
+  .romun-footer-office p,
+  .romun-footer-email {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .romun-footer-email {
+    margin-top: 22px;
   }
 
   .romun-footer-copy {
-    margin-top: 26px;
-    font-size: 11.5px;
+    margin-top: 24px;
+    padding-top: 20px;
+    font-size: 11px;
   }
 }
+
 
 </style>
 
@@ -8706,19 +8774,38 @@ src="https://www.facebook.com/tr?id=934398425706152&ev=PageView&noscript=1"
   <!-- FOOTER -->
   <footer class="romun-footer">
     <div class="romun-footer-inner">
-      <h2 class="romun-footer-brand">로문특허법률사무소</h2>
+      <img
+        class="romun-footer-logo"
+        src="https://ik.imagekit.io/suelle/%EB%A1%9C%EB%AC%B8/%EB%A1%9C%EB%AC%B8.jpg"
+        alt="로문특허법률사무소 Lawmun IP Law Firm"
+        loading="lazy"
+        decoding="async"
+      >
+
+      <p class="romun-footer-representative"><strong>대표변리사</strong> : 이원택, 김성현</p>
 
       <div class="romun-footer-line"></div>
 
-      <div class="romun-footer-info">
-        <p><strong>대표변리사</strong> : 이원택</p>
-        <p><strong>사업자등록번호</strong> : 788-63-00861</p>
-        <p><strong>주소</strong> : 서울특별시 강남구 논현로75길 15, 501호 (역삼동, 역삼동 우암빌딩)</p>
+      <div class="romun-footer-offices">
+        <div class="romun-footer-office">
+          <h3>로문특허법률사무소 선릉사무소</h3>
+          <p><strong>사업자등록번호</strong> : 797-43-01231</p>
+          <p><strong>주소</strong> : 서울특별시 강남구 테헤란로 52길6, 1408호</p>
+        </div>
+
+        <div class="romun-footer-office">
+          <h3>로문특허법률사무소 역삼사무소</h3>
+          <p><strong>사업자등록번호</strong> : 797-43-01231</p>
+          <p><strong>주소</strong> : 서울특별시 강남구 논현로 75길15, 501호</p>
+        </div>
       </div>
+
+      <p class="romun-footer-email"><strong>이메일</strong> : marketing@lawmun.com</p>
 
       <p class="romun-footer-copy">© 2026 로문특허법률사무소. All Rights Reserved.</p>
     </div>
   </footer>
+
 
 </div>
 
